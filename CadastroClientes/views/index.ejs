@@ -1,0 +1,23 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        <% clientes.forEach(cliente => { %>
+            <li>
+                <%= cliente.nome %> - <%= cliente.email %> 
+                <a href="/edit/<%= cliente.id %>">Editar</a>
+                <a href="/delete/<%= cliente.id %>">Excluir</a>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/add">Adicionar Cliente</a>
+</body>
+</html>
